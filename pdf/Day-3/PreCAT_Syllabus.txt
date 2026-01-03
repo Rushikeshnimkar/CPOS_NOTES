@@ -1,0 +1,436 @@
+
+--- Page 1 ---
+CDAC - Common Admission Test - Syllabus
+Section A - Computer Fundamentals and Concepts of Programming (10 Questions)
+❖
+Evaluation and Types of Computers
+❖
+Number Systems, Conversions and Data Representation (Binary, hex, octal etc.)
+❖
+Input and Output Devices
+❖
+Low level language vs High level language
+❖
+Evaluation of Programming languages
+❖
+Algorithm and Flowcharts
+Section A - English (15 Questions)
+❖
+Synonyms, Antonyms
+❖
+Reading Comprehension(Passage)
+❖
+Sentence completion
+❖
+Prepositions (of, by, on, at, with etc.)
+❖
+Articles (A, An, The)
+❖
+Choosing Appropriate Filler with appropriate phase or part of sentence
+❖
+Arrangement of Sentences(Given 4 Sentences in PQRS form and arranged them)
+❖
+Spotting Errors
+❖
+Idioms and Phrases
+❖
+Active and passive voice
+Section A - Quantitative Aptitude (15 Questions)
+❖
+Number Systems :HCF & LCM, Decimal Fractions, Square Root And Cube Root, Average,
+Problems on Numbers
+❖
+Simplification
+❖
+Ages,
+❖
+Surds & Indices
+❖
+Percentages, Profit & Loss, Ratio & Proportion, Partnership
+❖
+Chain Rule
+❖
+Allegation & Mixture
+❖
+Simple Interest & Compound Interest
+❖
+Area: Volume and Surface Area
+❖
+Calendar, Clocks
+❖
+Races & Games of skills
+❖
+Permutation & Combinations, Probability
+❖
+Height & Distances
+❖
+Pipe and Cisterns
+❖
+Time & Work, Time & Distance
+❖
+Boats & Streams
+❖
+Train
+❖
+Odd Man Out and Series
+Section A- REASONING (10 Questions)
+❖
+Verbal Reasoning : Analogy
+❖
+Blood Relation (sentence form , A+B –>A is sister of  B)
+❖
+Puzzle Test
+❖
+Direction Sense Test
+❖
+Sitting Arrangement (Circular Table , Straight Line)
+❖
+Series (Number)
+❖
+Direction Sense(North East West South)
+❖
+Coding Decoding (A-Z)
+❖
+Data Sufficiency
+
+--- Page 2 ---
+Section B - C Programming (10 Questions)
+❖
+History Of C, Keywords In C, Standards, Data Types, Type Modifiers, Qualifiers
+❖
+Operators: Priority and Associativity
+❖
+Decision Control: If ..else and switch case
+❖
+Iteration:
+while, do..while ,for ,Jump Statements
+❖
+Function:
+Built-in, User defined
+Pass by Value and Pass By address
+Recursion, Storage Classes In C
+❖
+Pointer: Wild Pointer, NULL Pointer,Void Pointer
+Scale Factor, Pointer Arithmetics, Function Pointer
+❖
+Array:
+1D & 2D Array
+Static and Dynamic Implementation
+Memory Allocation
+Accessing members using array and Pointer Notation
+❖
+String: Library Functions, String size and length
+String access using pointer and pointer arithmetic
+Multiple Strings and CommandLine Argument using two D Array , Array of Pointers
+❖
+PreProcessor Directives:
+#include, #define, #pragma
+Operators # and ##
+Difference Macro and Function
+❖
+Structure:
+Memory Allocation
+Access of structure members using dot( .) and arrow (->) operator
+Array of Structure
+Bit Field
+❖
+Union: Memory Allocation
+Accessing Different type of members in shared memory
+❖
+File Handling:
+Types of Files, Modes of Files
+Sequential & Random Access File
+Byte Read / Write, Buffer size data Read / Write, Binary Data Read / Write
+Section B - Data Structure (10 Questions)
+❖
+Introduction to Data Structure
+❖
+Algorithms: Divide and conquer algorithms
+Greedy Algorithm
+❖
+Time Complexity:
+Best Case, Average Case, Worst Case
+❖
+Sorting:
+Selection Sort, Bubble Sort, Insertion Sort, Merge Sort, Quick Sort
+❖
+Searching:
+Binary Search, Linear Search
+❖
+Stack:
+Applications of Stack
+Expression Conversion, evaluation and balancing
+Operations of Stack
+❖
+Queue:
+Types of Queue
+Applications of Queue
+Operations of Queue
+❖
+LinkedList :
+Singly Linear /Circular LinkedList operations and time complexity
+Doubly Linear /Circular LinkedList time complexity
+❖
+Tree :
+Tree Terminologies
+Types of Tree Binary Tree and its types, AVL Tree, Spanning Tree
+Traversal : Inorder, Preorder, PostOrder
+❖
+Graph:
+Basic Terminologies of graph
+
+--- Page 3 ---
+Section B - Object Oriented Concepts (10 Questions)
+❖
+Difference Between Structure in C & C++
+❖
+POP Vs OOP
+❖
+Class, Object
+❖
+Inspectors, Mutators, Facilitators, Constructor and Destructor
+❖
+cin, cout, Default Arguments, Inline Functions.
+❖
+Array of objects, new/delete Operator, references ,Constructor/Destructor revisited, Dynamic Array of
+Objects.
+❖
+Static Data Members and Member Functions
+❖
+Introduction to Exception Handling
+❖
+Composition, Friend Function and Friend class
+❖
+Function overloading, Operator Overloading Introduction
+❖
+Copy constructor and Assignment operator.
+❖
+Inheritance, Types, Modes, virtual inheritance
+❖
+Virtual Functions, Pure Virtual Functions
+❖
+Abstract Class, Interface Concept
+❖
+Template programming: With Functions and Class.
+❖
+File Handling intro, RTTI and Casting Operators Basics
+Section B - Operating System (5 Questions)
+❖
+Introduction
+Introduction to Operating System, What is OS, Booting the System
+❖
+Introduction to Computer Hardware and its major components(CPU, Memory, IO): Memory
+Technologies and its characteristics, IO Module Structure, External Devices
+Structure and IO techniques.
+❖
+System Architecture Design of OS: System Calls, Dual Mode Operation: System mode and
+Kernel mode
+❖
+Process Management: What is Process, States of the Process, PCB, CPU Scheduling, CPU
+Scheduling Algorithms, Inter Process Communication, Process
+Synchronization/Coordination, Deadlocks and Deadlock Handling Methods.
+❖
+Memory Management: What is memory management, Swapping, Contiguous Memory
+Allocation, Paging, Segmentation, Virtual Memory Management, Demand Paging,
+Thrashing.
+❖
+File & Storage Management: What is File, What is File System, File System Structure, File
+System Architecture, Disk Space Allocation Methods, Disk Scheduling algorithms.
+Section B - Data Communication and Networking (5 Questions)
+❖
+NETWORK:
+Centralized Computing, Decentralized Computing
+Server-client, Cloud computing
+❖
+Common Types of Networks:
+LAN,WAN,WLAN,MAN,SAN,CAN
+Primary and Main Types of Networks
+Basic types of LAN
+Token Ring
+Ethernet
+MAC Address
+IPV4,IPV6, Port Numbers
+Switch , Switch Techniques and Bridges
+Router
+❖
+OSI Layer
+❖
+IP Addressing:
+❖
+Common TCP/IP stack Protocols:
+ARP (Address Resolution Protocol)
+IP (Internet Protocol)
+
+--- Page 4 ---
+ICMP (Internet Control Message Protocol) 
+TCP (Transmission Control Protocol)
+UDP (User Datagram Protocol) 
+FTP (File Transfer Protocol) 
+Telnet (Telecommunications Network)
+DNS (Domain Name System) 
+HTTP (Hypertext Transfer Protocol) 
+Section B - Basics of BigData (5 Questions)
+❖
+Big Data Concept
+❖
+Characteristics of Big Data
+⮚
+Volume, Velocity, Variety, Veracity, Value
+❖
+History of Big Data
+❖
+Big Data Processing
+⮚
+Batch processing
+⮚
+Streaming processing
+❖
+Types of data
+⮚
+Structured
+⮚
+Semi-structured
+⮚
+Unstructured
+❖
+Databases
+⮚
+RDBMS - ACID, SQL (basic concept only)
+⮚
+NoSQL - BASE, CAP theorem
+❖
+ETL vs ELT
+❖
+Data warehouse - OLAP vs OLTP
+⮚
+Data cleansing
+⮚
+Data modeling
+❖
+Data Engineering Life Cycle - Overview
+❖
+Big Data Frameworks (short intro only)
+⮚
+Hadoop
+⮚
+Hive
+⮚
+Spark
+❖
+Big Data Programming Languages
+⮚
+Python, Java, Scala
+❖
+Big data jobs/career opportunities
+Section B - Introduction Artificial Intelligence(5 Questions)
+❖
+Definition of AI : Definition of AI , What is agent, What is environment and Need of AI
+❖
+AI Understanding : What are AI Elements?
+❖
+Types of AI : Purely Reactive ,Limited Memory, Theory of Mind, Self aware
+❖
+Main Domains of AI technology : Data Science, Computer Vision and Natural Language
+Processing(NLP)
+❖
+History of AI
+❖
+Ways to implement AI : Introduction to Machine Learning and its categories (supervised and
+unsupervised) algorithm, Introduction to Deep Learning (input layer, hidden layer and output
+layer)
+❖
+AI Uses and its various Applications
+❖
+Advantages and Disadvantages of AI
+❖
+Introduction to Neural Networks : What is neural network? What is Fuzzy Logic? and what is the
+meaning of Genetic Algorithms?
+❖
+Current Trends and Future Directions in AI
+Section C - Digital Electronics (20 Questions)
+❖
+Introduction
+Signal, Analog Signal, Digital Signal
+❖
+Number System
+Decimal number ,Binary number, Octal number, Hexadecimal number
+Converting from Another Base to Decimal
+Converting from Decimal to Another Base
+Converting from a base Other than 10 to Another Base Other than 10
+
+--- Page 5 ---
+Octal to binary, Binary to octal
+Hexadecimal to binary, Binary to hexadecimal, BCD
+Laws, Boolean Algebra, K-Map, Logic Gates, Universal gate
+Binary Addition, Binary Subtraction
+1’s complement,2’s complement,9’s complement,10’s complement, Multiplication, Division
+Gray code,Excess-3 code
+❖
+Combinational Circuit
+Half Adder ,Full Adder, Half Subtractor, Full Subtractor
+Multiplex, Demultiplexer
+Decoder, Encoder
+❖
+Sequential Circuit
+RS Flip-flop, D Flip-flop, JK Flip-flop, T Flip-flop
+Counter, Shift Register
+❖
+Logic Family in short
+Circuit of each logic family
+Advantages, Disadvantages
+❖
+Resolution Problems
+Section C - Computer Architecture (15 Questions)
+❖
+Machine Instructions
+Memory-Reference Instructions
+Register-Reference Instructions
+I/O Instructions
+Addressing Modes
+❖
+ALU Data Path
+❖
+CPU Control Unit Design, Memory Interfacing, Pipelining
+❖
+Memory (cache memory, main memory , secondary memory )
+Register Memory
+Primary Memory/Main Memory (RAM)
+Types of RAM
+SRAM, DRAM, SDRAM, DDR SDRAM
+Secondary Memory (ROM)
+Types of ROM
+ROM, PROM, EPROM, EEPROM, Flash
+Section C - Microprocessor (15 Questions)
+❖
+Introduction,Basic Concept, What is Microprocessor, Basic Microcomputer
+Classification of Microprocessor
+RISC Architecture, CISC Architecture
+Harvard Architecture, Von Neumann Architecture
+Microprocessor 8085
+8085 Architecture
+Bus Structure in 8085,Registers
+8085 PIN DESCRIPTIONS
+Interrupt
+Classification of Interrupts ,Interrupt Handling Procedure
+8085 Instruction
+Instruction Set Classification, Instruction Format
+Addressing Modes in Instructions
+INSTRUCTION EXECUTION AND TIMING DIAGRAM
+Opcode fetch, Memory Read, Memory Write, I/O read, I/O Write Counter and Delay
+Microprocessor 8086
+❖
+Architecture of 8086
+8085 PIN DESCRIPTIONS, Addressing modes, Instruction Set Classification
+Brief Introduction to Microprocessor Interfacing
+❖
+8255 =>Programmable Peripheral Interface
+❖
+8254/8253 =>Programmable Interval timer
+❖
+8259 =>Programmable Interrupt controller
+❖
+8279 => Programmable Keyboard/Display Interface
+❖
+8257 => DMA (Direct memory access) controller
+❖
+8251 => Programmable communication Interface(USART)

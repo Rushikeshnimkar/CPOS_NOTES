@@ -16,10 +16,11 @@ Welcome to comprehensive study notes covering **Operating Systems Concepts** and
 | 1 | [Introduction to OS](os/01-introduction-to-os.md) | Fundamentals, types, and architecture of operating systems |
 | 2 | [Introduction to Linux](os/02-introduction-to-linux.md) | Linux history, architecture, file system, and basic commands |
 | 3 | [Shell Programming](os/03-shell-programming.md) | Bash scripting, variables, control structures, and functions |
-| 4 | [Processes](os/04-processes.md) | Process management, scheduling algorithms, and IPC |
+| 4 | [Processes](os/04-processes.md) | Process management, scheduling algorithms, IPC, **semaphore numericals** ⭐ |
 | 5 | [Memory Management](os/05-memory-management.md) | Paging, segmentation, **numericals with formulas** ⭐ |
 | 6 | [Virtual Memory](os/06-virtual-memory.md) | Demand paging, page replacement algorithms, thrashing |
 | 7 | [Deadlock](os/07-deadlock.md) | Deadlock conditions, prevention, avoidance (Banker's algorithm) |
+| 8 | [File Management](os/08-file-management.md) | File systems, disk scheduling, I/O techniques, booting ⭐ |
 
 ---
 

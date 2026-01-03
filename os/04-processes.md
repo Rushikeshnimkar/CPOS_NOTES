@@ -496,6 +496,23 @@ kill(pid, SIGKILL);  // Force kill
 
 ---
 
+## Process Types
+
+### Independent vs Cooperative Processes
+
+| Type | Description |
+|------|-------------|
+| **Independent Process** | Does not share data with any other process. Does not affect or get affected by other processes |
+| **Cooperative Process** | Shares data with other processes. Affects or gets affected by other processes |
+
+### Reasons for Cooperating Processes
+- **Information Sharing**: Multiple users accessing the same data
+- **Computation Speedup**: Breaking tasks into subtasks for parallel execution
+- **Modularity**: Dividing system functions into separate processes
+- **Convenience**: Working on multiple tasks simultaneously
+
+---
+
 ## Inter-Process Communication (IPC)
 
 ### Why IPC?
@@ -504,6 +521,7 @@ kill(pid, SIGKILL);  // Force kill
 - Computation speedup
 - Modularity
 - Convenience
+- **Cooperative processes need IPC to communicate and synchronize**
 
 ### IPC Methods
 
@@ -574,7 +592,22 @@ semop(semid, &decrement, 1);
 semop(semid, &increment, 1);
 ```
 
-#### 6. Sockets
+#### 6. Signals
+
+**Signal IPC** allows processes to communicate by sending signals through the OS.
+
+| Signal | Number | Description |
+|--------|--------|-------------|
+| **SIGINT** | 2 | Interrupt from keyboard (Ctrl+C) - Terminates foreground process |
+| **SIGKILL** | 9 | Force kill signal - Cannot be handled by process |
+| **SIGSEGV** | 11 | Segmentation fault - Invalid memory access |
+| **SIGCONT** | 18 | Continue suspended process (Ctrl+Q) |
+| **SIGSTOP** | 19 | Suspend process (Ctrl+S) - Cannot be handled |
+| **SIGTERM** | 15 | Graceful termination request |
+
+> **Note:** Processes can handle most signals, but SIGKILL (9) and SIGSTOP (19) cannot be caught or ignored.
+
+#### 7. Sockets
 
 ```c
 // Create socket
@@ -582,6 +615,55 @@ int sockfd = socket(AF_INET, SOCK_STREAM, 0);
 
 // Connect, send, receive...
 ```
+
+> **Socket IPC** allows communication between processes running on different machines connected via network.
+
+---
+
+### Synchronization Tools
+
+#### Semaphore
+
+**Semaphore** was suggested by Dijkstra. It is a counter variable used for process synchronization.
+
+**Two Operations on Semaphore:**
+
+| Operation | Also Known As | Description |
+|-----------|---------------|-------------|
+| **wait()** | P operation, decrement | Decrements counter by 1. If count < 0, process is blocked |
+| **signal()** | V operation, increment | Increments counter by 1. Wakes up a blocked process if any |
+
+**Types of Semaphore:**
+
+| Type | Description | Value Range |
+|------|-------------|-------------|
+| **Binary Semaphore** | Only one process can access resource at a time | 0 or 1 |
+| **Counting Semaphore** | Multiple processes can access resources | Any integer |
+
+> **Key Formula:** If semaphore count = -n, then **n processes are waiting** on that semaphore.
+
+#### Semaphore Numerical Example
+
+**Problem:** If the initial value of counting semaphore is **15** and after that **5 wait()** operations and **8 signal()** operations are applied, what will be the current value of the semaphore variable?
+
+**Solution:**
+```
+Initial value:      S = 15
+After 5 wait():     S = 15 - 5 = 10
+After 8 signal():   S = 10 + 8 = 18
+
+Answer: 18 ✓
+```
+
+#### Semaphore vs Mutex
+
+| Semaphore | Mutex |
+|-----------|-------|
+| Can be decremented by one process and incremented by another | Only the owner (locking process) can unlock |
+| Can be counting or binary | Only binary (locked/unlocked) |
+| Used for counting, mutual exclusion, or signaling | Used only for mutual exclusion |
+
+---
 
 ### IPC Comparison
 
@@ -591,6 +673,7 @@ int sockfd = socket(AF_INET, SOCK_STREAM, 0);
 | Named Pipes | Fast | Limited | Any process |
 | Message Queues | Medium | Medium | System-wide |
 | Shared Memory | Fastest | Large | System-wide |
+| Signals | Fast | Limited (signal codes) | Same system |
 | Sockets | Medium | Variable | Network-wide |
 
 ---

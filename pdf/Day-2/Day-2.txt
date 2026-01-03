@@ -1,0 +1,733 @@
+
+--- Page 1 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals
+And
+Operating System Concepts
+
+--- Page 2 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals
+Module introduction
+CCAT point of view: 
+- Operating Systems: 5 Questions
+- Computer Fundamentals :5 Questions 
+Reference Book: 
+- Operating System Concepts - Galvin
+
+--- Page 3 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals
+Practice Exam :
+- Quiz  : 4 quiz exam OS ( 10 Question )
+- Quiz  : 1 quiz exam Computer Fundamentals ( 10 Question )
+- Module End Quiz Exam ( 20 Question )
+
+--- Page 4 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Introduction: -
+o Why there is need of an OS?
+o What is an OS?
+o Functions of an OS
+Computer Fundamentals:
+o Major Components : Processor, Memory Devices & IO Devices. 
+o Memory Technologies and its characteristics 
+o IO Techniques
+
+--- Page 5 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+UNIX System Architecture Design 
+o Major subsystem of an UNIX system: File subsystem & Process Control subsystem.
+o System Calls & its categories
+o Dual Mode Operation 
+Process Management 
+o What is Process & PCB? 
+o States of the process 
+o Process life cycle
+o CPU scheduling & CPU scheduling algorithms 
+o Inter Process Communication: Shared Memory Model & Message Passing Model
+o Processor architecture (CF) 
+o Process Synchronization/Co-ordination 
+o Deadlocks & deadlock handling methods 
+
+--- Page 6 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Memory Management 
+o Memory types (CF)
+o Swapping
+o Memory Allocation Methods 
+o Internal Fragmentation & External Fragmentation  Segmentation 
+o Paging 
+o Virtual Memory Management 
+
+--- Page 7 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+File Management 
+o What is file? 
+o What is file system & file system structure?
+o Disk structure (CF)
+o Disk space allocation methods 
+o Disk scheduling algorithms
+o Computer structure (CF) 
+o Interrupts (CF) 
+o Direct Memory Access (CF) 
+o Input-Output (CF) 
+o System calls
+
+--- Page 8 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Q.  Why there is a need of an OS?
+- Computer is a machine/hardware does different tasks efficiently & accurately.
+- Basic functions of computer :
+1. Data Storage 
+: Memory Devices
+2. Data Processing : CPU/Processor
+3. Data Movement : I/O Devices
+4. Control
+- As any user cannot communicates/interacts directly with computer hardware to do different
+tasks, and hence there is need of some interface between user and hardware.
+
+--- Page 9 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Diagram :OS
+
+--- Page 10 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Q.  What is an Operating System?
+oAn OS is a system software (i.e. collection of system programs) which acts as an interface 
+between  user and hardware.
+oAn OS also acts as an interface between programs and hardware. 
+oAn OS allocates resources like main memory, CPU time, i/o devices access etc... to all   
+running programs, hence it is also called as a resource allocator.
+oAn OS controls an execution of all programs and it also controls hardware devices which are 
+connected to the computer system and hence it is also called as a control program. 
+
+--- Page 11 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+oAn OS manages limited available resources among all running programs, hence it is also 
+called as a resource manager. 
+From End User: An OS is a software (i.e. collection of programs) comes either in CD/DVD, 
+has following main components: 
+1. Kernel: It is a core program/part of an OS which runs continuously into the main memory 
+does basic minimal functionalities of it. e.g. Linux: vmlinuz, Windows: ntoskrnl.exe 
+2. Utility Software's: e.g. disk manager, windows firewall, anti-virus software etc... 
+3. Application Software's: e.g. Google chrome, shell, notepad, MS office etc...
+
+--- Page 12 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Q. What is a Software? 
+o Software is a collection of programs. 
+Q. What is a Program? 
+o Program is a finite set of instructions written in any programming language (either low level or high level 
+programming language) given to the machine to do specific task. 
+3 types of programs are there: 
+1.
+"user programs": programs defined by the programmer user/developers 
+e.g. main.c, hello.java, addition.cpp etc.... 
+2.
+"application programs": programs which comes with an OS/can be installed later 
+e.g. MS Office, Notepad, Compiler, IDE's, Google Chrome, Mozilla Firefox, Calculator, Games etc.... 
+3.
+"System Programs": programs which are inbuilt in an OS/part of an OS. 
+e.g. Kernel, Loader, Scheduler, Memory Manager etc...
+
+--- Page 13 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Functions of an OS: 
+Basic minimal functionalities/Kernel functionalities: 
+1.
+Process Management 
+2.
+CPU Scheduling 
+3.
+Memory Management 
+4.
+Hardware Abstraction 
+5.
+File & IO Management 
+Extra utility functionalities/optional: 
+6. Protection & Security 
+7. User Interfacing 
+8. Networking
+
+--- Page 14 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+
+--- Page 15 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+What is an IDE (Integrated Software Development) ?
+o It is an application software i.e. collection of tools/application programs like source code editor, pre-processor, 
+compiler, linker, debugger etc... required for faster software development.
+e.g. VS code editor, MS Visual Studio, Net beans, Android Studio, Turbo C etc.... 
+1.
+"Editor": it is an application program used to write a source code.
+Source Code – Program written  in any programming language. 
+e.g. notepad, vi editor, gedit etc... 
+2.
+"Pre-processor": it is an application program gets executes before compilation and does two jobs - it 
+executes  all pre-processor directives and removes all comments from the source code. 
+e.g. cpp 
+3.
+"Compiler": it is an application program which converts high level programming language code into low 
+level programming language code i.e. human understandable language code into the machine
+understandable   language code. 
+e.g. gcc, tc, visual c etc...
+
+--- Page 16 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+4.
+"Assembler": it is an application program which converts assembly language code into machine language 
+code/object code.
+e.g. masm, tasm etc... 
+5.
+"Linker": it is an application program which links object file/s in a program with precompiled object modules 
+of library functions exists in a lib folder and creates final single executable file.
+e.g. ld: link editor in Linux.
+
+--- Page 17 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+
+--- Page 18 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+
+--- Page 19 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+• Booting Concept :
+• Booting is basically the process of starting the computer. 
+• When the press Power Button  in first switched on it has nothing inside the Memory. 
+• In order to start the Computer , Operating System (Secondary storage) loads into the Main Memory
+(RAM) and then Computer is ready to take commands from the User.
+
+--- Page 20 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Dual Mode Operation:
+System runs in two modes: 
+1.
+System Mode 
+2.
+User Mode 
+1. System Mode: 
+o When the CPU executes system defined code instructions, system runs in a system mode. 
+o System mode is also referred as kernel mode/monitor mode/supervisor mode / privileged mode. 
+2. User Mode: 
+o When the CPU executes user defined code instructions, system runs in a user mode. 
+o User mode is also referred as non - privileged mode. 
+o Throughout execution, the CPU keeps switch between kernel mode and user mode 
+
+--- Page 21 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Dual Mode Operation: 
+oThroughout an execution of any program, the CPU keeps switches in between 
+kernel mode and user mode and hence system runs in two modes, it is referred 
+as dual mode operation.
+oTo differentiate between user mode and kernel mode one bit is there onto the 
+CPU which is maintained by an OS, called as mode bit, by which the CPU 
+identifies weather currently executing instruction is of either system defined 
+code instruction/s or user defined code instruction/s. 
+oIn Kernel mode value of mode bit = 0, whereas 
+oIn User mode value of mode  bit = 1.
+
+--- Page 22 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+Process Management 
+oWhen we say an OS does process management it means an OS is responsible for process 
+creation, to provide environment for an execution of a process, resource allocation, 
+scheduling, resources management, inter process communication, process coordination, 
+and terminate the process. 
+Q. What is a Program? 
+User view: 
+- Program is a finite set of instructions written in any programming language given to the 
+machine to do specific task. 
+System view: 
+- Program is an executable file in HDD which divided logically into sections like exe header, 
+bss section, data section, rodata section, code section, symbol table.
+
+--- Page 23 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+Q. What is a Process? 
+User view: 
+oProgram in execution is called as a process. 
+oRunning program is called as a process. 
+oWhen a program gets loaded into the main memory it is referred as a process. 
+oRunning instance of a program is referred as a process. 
+System view: 
+oProcess is a program loaded into the main memory which has got PCB into the main memory 
+inside kernel space and program itself into the main memory inside user space has got bss 
+section, rodata section, code section, and two new sections gets added for the process .
+- stack section: contains function activation records of called functions. 
+- heap section: dynamically allocated memory
+
+--- Page 24 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+
+--- Page 25 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+oAs a kernel, core program of an a OS runs continuously into the main memory, part of the 
+main memory which is occupied by the kernel referred as kernel space and whichever part is 
+left is referred as an user space, so main memory is divided logically into two parts: 
+kernel space & user space.
+o User programs gets loaded into the user space only. 
+oWhen we execute a program or upon submission of a process very first one structure gets 
+created into the main memory inside kernel space by an OS in which all the information 
+which is required to control an execution of that process can be kept, this structure is 
+referred as a PCB.
+oPCB : Process Control Block, is also called as a Process Descriptor. 
+oPer process one PCB gets created and PCB remains inside the main memory throughout an 
+execution of a program, upon exit PCB gets destroyed from the main memory. 
+
+--- Page 26 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+PCB mainly contains: 
+• PID : Process ID
+• PPID : Parent Processes ID
+• PC  : Program Counter
+• Execution context
+• Kernel stack 
+• Exit status
+• CPU sched information, memory management information, information about resources 
+allocated for that process, execution context etc...
+
+--- Page 27 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+1. Resident monitor
+- Early (oldest) OS resides in memory and monitor execution of the programs. If it fails,
+error is reported.
+- OS provides hardware interfacing that can be reused by all the programs.
+2. Batch System
+- The batch/group of similar programs is loaded in the computer, from which OS loads one
+program in the memory and execute it. The programs are executed one after another.
+- In this case, if any process is performing IO, CPU will wait for that process and hence
+not utilized efficiently.
+3. Multi-programming
+- Better utilization of CPU
+- Loading multiple Programs in memory
+- Mixed program(CPU bound + IO bound)
+
+--- Page 28 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+4. Time-sharing/Multitasking
+- Sharing CPU time among multiple process/task present in main memory and ready for execution 
+- Any process should have response time should be less then 1sec 
+- Multi-tasking is divided into two types 
+• Process based multitasking 
+• Thread based multitasking 
+- Thread is a light weight process .
+- When new thread is created a new stack and new TCB is created. 
+- Thread Share text, data, heap sections with the parent process
+Process and thread 
+-Process is a container for resources. 
+-Thread is unit of execution/ scheduler. 
+- For each process one thread is created by default it is called as main thread
+
+--- Page 29 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+5. Multi-user system 
+- Multiple users runs multiple programs concurrently. 
+6.
+Multi-processor/ Mutli-core system
+- System can run on a machine in which more than one CPU’s are connected in a closed circuit.
+- Multiprocessing Advantage is it increased throughput (amount of work done in unit time) 
+- There are two types of multiprocessor systems: 
+Asymmetric Multi-processing 
+- OS treats one of the processor as master processor and schedule task for it. The task is in turn divided into smaller tasks 
+and get them done from other processors.
+Symmetric Multi-processing 
+- OS considers all processors at same level and schedule tasks on each processor individually. All modern desktop systems 
+are SMP. 
+
+--- Page 30 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+Process States: 
+o To keep track on all running programs, an OS maintains few data structures referred as kernel data 
+structures: 
+1.
+Job queue: it contains list of PCB’s of all submitted processes. 
+2.
+Ready queue: it contains list of PCB’s of processes which are in the main memory and waiting for 
+the CPU time. 
+3.
+Waiting queue: it contains list of PCB’s of processes which are requesting for that particular device. 
+I.
+Job Scheduler/Long Term Scheduler: it is a system program which selects/schedules
+jobs/processes from job queue to load them onto the ready queue. 
+II.
+CPU Scheduler/Short Term Scheduler: it is a system program which selects/schedules
+job/process from ready queue to load it onto the CPU. 
+Dispatcher: it is a system program which loads a process onto the CPU which is scheduled by the CPU 
+scheduler, and the time required for the dispatcher to stops an execution of one process and to starts an 
+execution of another process is referred as dispatcher latency.
+
+--- Page 31 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+Process States: 
+oThroughout execution, process goes through different states out of which at a time it can be 
+only in a one state. 
+- States of the process: 
+1. New state: upon submission or when a PCB for a process gets created into the main 
+memory process is in a new state. 
+2. Ready state: after submission, if process is in the main memory and waiting for the CPU 
+time, it is in a ready state. 
+3. Running state: if currently the CPU is executing any process then state of that process is 
+considered as a running state. 
+4. Waiting state: if a process is requesting for any i/o device then state of that process is 
+considered as a waiting state. 
+5. Terminated state: upon exit, process goes into terminated state and its PCB gets destroyed 
+from the main memory.
+
+--- Page 32 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+
+--- Page 33 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+Context Switch: 
+- As during context-switch, the CPU gets switched from an execution context of one process 
+onto an execution context of another process, and hence it is referred as "context-switch". 
+- context-switch = state-save + state-restore 
+- state-save of suspended process can be done i.e. an execution context of suspended process 
+gets saved into its PCB. 
+- state-restore of a process which is scheduled by the CPU scheduler can be done by the 
+dispatcher, dispatcher copies an execution context of process scheduled by the cpu scheduler 
+from its PCB and restore it onto the CPU registers. 
+- When a high priority process arrived into the ready queue, low priority process gets suspended 
+by means of sending an interrupt, and control of the CPU gets allocated to the high priority 
+process, and its execution gets completed first, then low priority process can be resumed back, 
+i.e. the CPU starts executing suspended process from the point at which it was suspended and 
+onwards.
+
+--- Page 34 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+oCPU Scheduler gets called in the following four cases: 
+Case-1: Running =>Terminated 
+Case-2: Running => Waiting 
+Case 3: Running => Ready 
+Case-4: Waiting => Ready 
+- There are two types of CPU scheduling: 
+1. Non-preemptive: under non-preemptive cpu scheduling, process releases the control of 
+the CPU by its own i.e. voluntarily. 
+- e.g. in above case 1 & case 2 
+2. Preemptive: under preemptive cpu scheduling, control of the CPU taken away  forcefully 
+from the process. 
+- e.g. in above case 3 & 4.                                        
+
+--- Page 35 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+Following algorithms used for CPU Scheduling:
+1. FCFS (First Come First Served) CPU Scheduling 
+2. SJF (Shortest Job First) CPU Scheduling 
+3. Round Robin CPU Scheduling 
+4. Priority CPU Scheduling 
+- Multiple algorithms are there for CPU scheduling, so there is need to decide which algorithm 
+is best suited at specific situation and which algorithm is an efficient one, to decide this there are 
+certain criteria's called as scheduling criteria's: cpu utilization, throughput, waiting time, 
+response time and turn-around-time.
+
+--- Page 36 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+CPU Scheduling Criteria's: 
+1. CPU Utilization: one need to select such an algorithm in which utilization of the CPU must 
+be as maximum as a possible. 
+2. Throughput: total work done per unit time. One need to select such an algorithm in which 
+throughput must be as maximum possible. 
+3. Waiting Time: it is the total amount of time spent by the process into the ready queue for 
+waiting to get control of the CPU from its time of submission. One need to select such an 
+algorithm in which waiting time must be as minimum as possible. 
+4. Response Time: it is a time required for the process to get first response from the CPU from 
+its time of submission. One need to select such an algorithm in which response time must be 
+as minimum as possible
+
+--- Page 37 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+5. Turn-Around -Time: it is the total amount of time required for the process to complete its
+execution from its time of submission.
+oOne need to select such an algorithm in which turn-around-time must be as minimum as 
+possible.
+oExecution Time: it is the total amount of time spent by the process onto the CPU to 
+complete its execution. 
+- OR CPU Burst Time: total no. of CPU cycles required for the process to complete its 
+execution. 
+oTurn-Around-Time = Waiting Time + Execution Time. 
+oTurn-around-time is the sum of periods spent by the process into ready queue for 
+waiting and onto the CPU for execution from its time of submission. 
+
+--- Page 38 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+CPU Scheduling 
+1. FCFS (First Come First Served ) CPU Scheduling 
+- In this algorithm, process which is arrived first into the ready queue gets the control of the 
+CPU first i.e. control of the CPU gets allocated for processes as per their order of an arrival 
+into the ready queue. 
+- This algorithm is simple to impalement and can be implemented by using fifo queue. 
+- It is a non-preemptive scheduling algorithm. 
+Convoy effect: in fcfs, due to an arrival of longer process before shorter processes, shorter 
+processes has to wait for longer duration and due to which average waiting time gets 
+increases, which results into an increase in an average turn-around-time and hence overall 
+system performance gets down.
+
+--- Page 39 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+Process
+Arrival Time
+CPU Burst
+Wait Time
+Turn Around Time
+P1
+0
+24
+P2
+0
+3
+P3
+0
+3
+FCFS Scheduling
+
+--- Page 40 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+2. SJF(Shortest Job First) CPU Scheduling: 
+oIn this algorithm, process which is having minimum CPU burst time gets the control of the 
+CPU first, and whenever tie is there it can be resolved by using fcfs. - SJF algorithm ensures 
+minimum waiting time. 
+oUnder non-preemptive SJF, algorithm fails if the submission time of processes are not same, 
+and hence it can be implemented as preemptive as well. 
+oNon-preemptive SJF is also called as SNTF(Shortest-Next-Time-First). 
+oPreemptive SJF is also called as SRTF(Shortest-Remaining-Time-First). 
+Starvation: in this algorithm, as shorter processes has got higher priority, process which is 
+having larger CPU burst time may gets blocked i.e. control of the CPU will never gets 
+allocated for it, such situation is called as starvation/indefinite blocking.
+
+--- Page 41 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+Process
+Arrival Time
+CPU Burst
+Wait Time
+Turn Around Time
+P1
+0
+7
+P2
+2
+4
+P3
+4
+1
+P4
+5
+4
+SJF/SNTF Scheduling
+
+--- Page 42 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+Process
+Arrival Time
+CPU Burst
+Remaining Time
+Wait Time
+Turn Around Time
+P1
+0
+7
+P2
+2
+4
+P3
+4
+1
+P4
+5
+4
+SRTF Scheduling
+
+--- Page 43 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+3. Round Robin Scheduling Algorithm 
+o In this algorithm, before allocating the CPU for processes, some fixed time slice or time quantum 
+gets decided in advanced, and at any given time control of the CPU may remains allocated with any 
+process maximum for that decided time-slice, once the given time slice is finished of that process, it 
+gets suspended and control of the CPU will be allocated to the next process again for maximum that 
+decided time slice and so on..., each process gets control of the CPU in a round robin manner i.e. cpu 
+gets shared among processes equally. 
+o If any process completes its execution before allocated time slice then control of the CPU will be 
+released by that process and CPU gets allocated to the next process as soon as it is completed for 
+effective utilization of the CPU. 
+o There is no starvation in RR Scheduling algorithm. 
+o This algorithm is purely preemptive. 
+o This algorithm ensures minimum response time. 
+o If time slice is minimum then there will be extra overhead onto the CPU due to frequent context-
+switch.
+
+--- Page 44 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+Process
+CPU Burst
+Remaining Time
+Wait Time
+Response Time
+P1
+53
+P2
+17
+P3
+68
+P4
+24
+Round Robin Scheduling
+
+--- Page 45 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+4. Priority Scheduling 
+o In this algorithm, process which is having highest priority gets control of the CPU first, each process is 
+having priority in its PCB. 
+o priority for a process can be decided by two ways: 
+1. internally – priority for process can be decided by an OS depends on no. of resources 
+required for it. 
+2. externally – priority for process can be decided by the user depends on requirement. 
+o Minimum priority value indicates highest priority. 
+o This algorithm is purely preemptive. 
+o Due to the very low priority process may gets blocked into the ready queue and control of the CPU 
+will never gets allocated for such a process, this situation is referred as a starvation or indefinite 
+blocking. 
+o Ageing: it is a technique in which, an OS gradually increments priority of blocked process, i.e. priority 
+of blocked process gets incremented after some fixed time interval by an OS, so that priority of blocked 
+process becomes sufficient enough to get control of the CPU, and starvation can be avoided.
+
+--- Page 46 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+Process
+Arrival Time
+CPU Burst
+Priority
+Wait Time
+P1
+0
+10
+3
+P2
+0
+1
+1
+P3
+0
+2
+4
+P4
+0
+5
+2
+Priority Scheduling
+
+--- Page 47 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems and Computer Fundamentals 
+Multi-level queue :
+•
+In modern OS, the ready queue can be divided into multiple sub-queues and processes are arranged in them 
+depending on their scheduling requirements. This structure is called as "Multi-level queue". 
+• If a process is starving in some sub-queue due to scheduling algorithm, it may be shifted into another sub-queue. 
+This modification is referred as "Multi-level feedback queue". 
+• The division of processes into sub - queues may differ from OS to OS.
+1.
+Important Services :Priority Scheduling
+2.
+Background Task   :SJF
+3.
+GUI Tasks              :RR
+4.
+Other Tasks            :FCFS
+
+--- Page 48 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Thank you!
+Kiran Jaybhave 
+email – kiran.jaybhave@sunbeaminfo.com

@@ -1,0 +1,13 @@
+/*
+If the initial value of counting semaphore is 15 and after that 5 wait() 
+operations and 8 signal() operations are applied then what will be the current value 
+of counting semaphore (s) variable ?
+A. 18 <--
+B. 10
+C. 3
+D. 8
+*/
+
+// 15 -> wait(5) -> 10 -> signal(8) ->18
+
+

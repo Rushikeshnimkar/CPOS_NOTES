@@ -1,0 +1,507 @@
+
+--- Page 1 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems
+File Management 
+
+--- Page 2 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+File Management 
+Q. What is file? 
+User view: 
+oFile is a container which contains logically related information/data.
+oFile is a collection of characters/records/lines. 
+oFile is a basic storage unit 
+System view:
+o File is a stream of bits/bytes. 
+oFile = data + metadata 
+data = actual file contents 
+metadata = information about the file.
+
+--- Page 3 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+• Data of the file is exists inside the file whereas information about the file gets 
+stored inside one structure referred as FCB (File Control Block).
+• In UNIX environment FCB is also called as an iNode.
+• FCB / iNode contains information about the file like:
+1. iNode number: unique identifier of a file 
+2. Name of the file 
+3. Type of the file 
+4. Size of the file 
+5. Parent folder location 
+6. Access permissions 
+7. Time stamps etc...
+
+--- Page 4 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+oPer file one iNode/FCB gets created by the system and 
+-i.e. hence no. of iNodes = no. of files onto the disk.
+o data + metadata of all the files are kept onto the disk, as disk may 
+contents thousands of files, so thousands of iNodes and millions of 
+bytes of data gets stored onto the disk, and hence all this data + 
+metadata of all files need be keep onto the disk in an organized 
+manner so that it can be accessed efficiently. 
+
+--- Page 5 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+oFile system :  file system is a way to store data onto the disk in an 
+organized manner so that it can be accessed efficiently and 
+conveniently. 
+• e.g. Each OS has its own file system like, 
+• UNIX: UFS(UNIX File system), 
+• Linux: Extended File system ext2, ext3, ext4, 
+• Windows: FAT, NTFS etc..., 
+• MAC OSX: HFS(Hierarchical File system) etc...
+
+--- Page 6 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Files system Structure: File system divides disk/partition logically into sectors/blocks, like 
+boot sector/boot block, volume control block/super block, master file table/iNode list block 
+and Data Block.
+
+--- Page 7 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Disk space allocation methods: 
+- When a file is requesting for free data blocks, then in which manner free data blocks 
+gets allocated for that file and how its information can be kept inside inode of that file 
+is referred as disk space allocation method. 
+Three disk space allocation methods are there: 
+1. Contiguous Allocation
+2. Linked Allocation
+3. Indexed Allocation
+
+--- Page 8 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+1. Contiguous Allocation : free data blocks gets allocated for a file in a contiguous manner. 
+Advantages :
+1. Sequential access.
+2. Random access .
+3. Simple to implement.
+Disadvantages :
+1. File may not grow(Limitations).
+2. External fragmentation
+-Number of blocks required are available   
+but not contiguous.
+Defragmentation :
+-Moves files on disk so that maximum 
+contiguous free space is available.
+
+--- Page 9 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+2. Linked Allocation: any free data blocks gets allocated for a file in a linked list manner.
+Advantages :
+1. Sequential access.
+2. No file grow limit. 
+3. No external fragmentation.
+Disadvantages :
+1. Slow random access.
+Example : FAT
+
+--- Page 10 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+3. Indexed Allocation : any free data blocks gets allocated for a file, as by maintaining an 
+index data block information about allocated data blocks can be kept inside it.
+Advantages :
+1. Sequential Access.
+2. Random Access.
+3. No External Fragmentation
+Disadvantages :
+1. File cant grow up to some limit.
+Example : UFS , EXT 2 , EXT 3
+
+--- Page 11 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Disk Scheduling Algorithms: 
+oWhen system want to access data from a disk, request can sent to disk controller 
+and disk controller accepts one request at a time and complete it. 
+oThere are chances that at a time more than one requests for accessing data from 
+the disk can be made by the processes running in a system, in that case all the 
+requests can be kept in a waiting queue of the disk maintained by an OS, and 
+there is need to schedule/select only one request at a time and sent it to the 
+disk controller, to do this there are certain algorithms referred as disk 
+scheduling algorithms.
+
+--- Page 12 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+1. FCFS (First Come First Served): request which is arrived first gets 
+accepted and completed. 
+2. SSTF (Shortest Seek Time First): request which is closed to the current 
+position of the head gets accepted and completed. 
+3. SCAN: head keeps scanning the disk from starting cylinder to end 
+cylinder and whichever request came across gets accepted and completed. 
+4. C-SCAN (Circular SCAN): head scans the disk only in a one direction.
+5. LOOK: this policy can be used either with SCAN/C-SCAN, in this, if 
+there is no request in a waiting queue then movement of the head gets 
+stopped.
+
+--- Page 13 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+Magnetic Disk : Hard Disk Drive Structure 
+o HDD is made up of one or more circular platters arranged like CD rack. 
+o A Circular platter is a made up of non-magnetic substance like aluminum or aluminum alloy, which 
+is coated with a magnetic substance. 
+o Coating of magnetic substance is either from one side to the platter or from both the sides (for 
+increasing its capacity) and hence platter in a magnetic disk may be either single sided platter or double 
+sided platter.
+o Circular platter is divided into the hundred’s of concentric rings called as tracks whereas each 
+track is divided into thousands of same size of blocks called as sectors. 
+o Usually the size of each sector is 512 bytes
+o There is one conducting coil referred as head which is used to access data from the sector i.e. head 
+can read and write data from and into a sector at a time. 
+o Head writes and read data sector by sector i.e. block by block, and magnetic disk is also called as 
+block device.
+
+--- Page 14 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+• All the operations like read, write, control etc... in a HDD are controlled by disk controller, 
+and hence movement of the head also controlled by it. 
+• Seek Time: time required for the disk controller to move head from its current position to the 
+desired track. 
+• Rotational Latency: after reaching head at desired track, circular platter gets rotated till the 
+head does not comes aligned with the desired sector, and time required for this rotation is 
+referred as rotational latency. 
+• Access Time = Seek Time + Rotational Latency.
+
+--- Page 15 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+
+--- Page 16 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+
+--- Page 17 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Hardware Abstraction
+• Operating System Hides Hardware intricacies( Complication) from the end user and the Othere program.This is 
+called as “Hardware Abstraction”.
+• For these Operating system has a lowest layer called as a “Hardware Abstraction Layer” (HAL).
+Optional Feature of Operating System
+User Interfacing
+Networking
+Security and Protection.
+
+--- Page 18 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+USER INTERFACE 
+1. CUI/CLI : Command User Interface/Command Line Interface 
+- By using this kind of interface user can interacts with an OS by means entering commands onto the 
+terminal/command line in a text format. 
+- e.g. In Windows name of the program which provide CUI => cmd.exe 
+- command prompt In Linux name of an application program which provides CUI => shell/terminal 
+- In MSDOS name of the program which provides CUI => command.com (Microsoft Disk Operating System). 
+2. GUI : Graphical User Interface 
+- by using this kind of interface user can interacts with an OS by means making an events like click on buttons, left 
+click/right click/double click, menu bar, menu list etc..... 
+- Windows = User friendly GUI.
+- e.g. In Windows name of an application program which provides GUI => explorer.exe
+- In Linux name of an application program which provides GUI => GNOME/KDE (GNU Network Object Model 
+Environment / Common Desktop Environment). 
+
+--- Page 19 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Security and Protection
+• Security:
+• Securing the Computer from external threats(Threats possibly malicious program) like virus,worms, 
+Trojans, malware and hacking.
+• Usually security is not the part of many OS. However, nowadays Windows OS provide security with 
+Windows Defender.
+• Mostly security handle by Antivirus program and Firewall. 
+• Protection:
+• Protecting the system component from internal threats / Programs.
+• Files of one user are not accessible to other user.
+• Dual Mode protection i.e. CPU modes –User Mode/ System Mode.
+• Memory of one process protected from another process.
+Networking
+• Now Days Networking is supported by all OS.
+• Internally OS does transfer data to other computer using Socket IPC.
+
+--- Page 20 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+oUNIX Operating System: 
+oUNIX : UNICS – Uniplexed Information & Computing Services/System. 
+oUNIX was developed at AT&T Bell Labs in US, in the decade of 1970’s by Ken 
+Thompson, Denies Ritchie and team. 
+oIt was first run on a machine DEC-PDP-7 (Digital Equipment Corporation Programmable 
+Data Processing-7). 
+oUNIX is the first multi-user, multi-programming & multi-tasking operating system. 
+oUNIX was specially designed for developers by developers 
+oSystem architecture design of UNIX is followed by all modern OS’s like Windows, Linux, 
+MAC OS X, Android etc..., and hence UNIX is referred as mother of all modern operating 
+systems.
+
+--- Page 21 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+
+--- Page 22 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+oKernel acts as an interface between programs and hardware. 
+oOperating System has subsystems like System Call Interface Block, File Subsystem Block, 
+Process Control Subsystem Block (which contains IPC, Memory Management & CPU 
+Scheduling), Device Driver, Hardware Control/Hardware Abstraction Layer. 
+oThere are two major subsystems: 
+1. Process Control Subsystem 
+2. File Subsystem 
+oIn UNIX, whatever is that can be stored is considered as a file and whatever is active is 
+referred as a process.
+o File has space & Process has life.
+
+--- Page 23 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+Input / Output Devices 
+o Devices which are connected to the motherboard externally through ports referred as peripheral devices or 
+peripherals. 
+o An IO Devices are also referred as an external devices. 
+Input Devices : 
+o The Input unit allows program and data into to be entered into the Computer.
+o Keyboard, Mouse, Scanner, Bar Code Reader, Eye Recognition System, Voice Recognition System, Touch Pad, 
+Touch Screen etc... 
+Output Device : 
+o The Output unit allows the result of processing  to be exported to the outside world or Other device or saved to be 
+used later.
+o Monitor, Printer, Speakers, Projector etc... 
+
+--- Page 24 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals
+
+--- Page 25 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+IO Modules/IO Controller: 
+oCore Computer system is not able to communicates directly with any external device and 
+hence I/O modules acts as an interface between core computer system and an I/O devices.
+oEach IO device has its own internal dedicated processing unit called  ‘as IO module’.
+oI/O Modules contains all the logic to communicates with an I/O devices. 
+oSingle I/O module can be used for communication between one device or with more than one 
+devices as well.
+Device Driver - is a program within operating system that send/receive data/command
+to/from IO device controller and also handles interrupts send From the device
+
+--- Page 26 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Computer Fundamentals
+Functions Of IO Module : 
+1. Control and Timing
+2. CPU communication
+3. Device communication
+4. Data Buffering
+5. Error Detection.
+
+--- Page 27 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+I/O Module Structure Diagram : 
+
+--- Page 28 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+External Device Block Diagram :
+
+--- Page 29 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+Structure of an External Device
+o External Device has three major blocks: 
+1. Control Logic Block(Controller): controls all the operations of that device. 
+2. Buffer: each device has its own memory in which data can be stored temporarily referred as 
+a buffer. 
+3. Transducer: this component converts any other form of energy into an electrical enery and 
+converts an electrical energy into another form, this block of an external device is used to do 
+communication with the outside world.
+IO Steps
+1.
+CPU checks I/0 module device status
+2.
+I/0 module returns status
+3.
+If ready, CPU requests data transfer
+4.
+I/0 module gets data from device
+5.
+I/0 module transfers data to CPU.
+
+--- Page 30 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+
+--- Page 31 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+Whenever there is transfer of data either from core computer system 
+(i.e. Bus) to an IO devices or vice-versa, it is referred as an I/O.
+There are three IO techniques: 
+1. Program driven IO 
+2. Interrupt IO 
+3. DMA i.e. Direct Memory Access
+
+--- Page 32 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+1. Program driven IO:
+oAll the logic/steps required for an I/O is there into one program, and by means of 
+executing that program by the CPU I/O  can be done.
+oCPU waits for IO operations to be completed. This is also called "Polling".
+oWhen OS/program waits for the IO to be completed, it is called as "Synchronous IO".
+Advantages: 
+o Simple 
+Disadvantages: 
+o As the CPU remains wholly involved in an IO, less CPU utilization, and hence system performance is 
+low.
+
+--- Page 33 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+2. Interrupt IO: 
+What is an interrupt?
+o An interrupt is a signal received by the CPU due to which it stops an execution of one job and starts an execution 
+of another job. 
+o CPU issues a command, and proceed for its work until interrupt by IO device
+o Since OS does not wait for the IO completion, it is called as "Asynchrous IO".
+Advantages: 
+o In this IO, the CPU remains involved in an IO whenever gets interrupted, and hence its cpu utilization can be 
+maximized. 
+Disadvantages: 
+o When there is a data transfer between main memory & secondary memory unnecessary involvement of the CPU 
+is there.
+
+--- Page 34 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+Interrupt Handling :
+• Interrupt handling function is also called as interrupt service rutine(ISR).
+• There are many IO devices in system , so there interrupt handling process also different 
+like keyboard , mouse , disk etc..
+• So there are Table maintain by OS that store all device interrupt function starting 
+address . This table is called as Interrupt Vector Table(IVT).
+Interrupt Types
+• Hardware Interrupt : 
+• Interrupt received from hardware
+• E.g. mouse , keyboard , storage devices … etc. 
+• Software Interrupt
+• Interrupt received from Software
+• E.g. system call, antivirus ..
+
+--- Page 35 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+3. DMA (Direct Memory Access):
+oWhenever there is a transfer of data between core computer system and IO devices (e.g. main 
+memory and secondary memory), the CPU initiates an IO and gives control of an IO process 
+to the DMA controller, and hence onwards that IO process is controlled by the DMC 
+controller till the end i.e. the DMA controller will work on behalf of the CPU and after 
+finishing an IO it sends acknowledgement to the CPU, and by the time the CPU can execute 
+another jobs, and utilization of the CPU can be maximized further.
+o e.g. 8237 DMA controller
+
+--- Page 36 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Booting Process
+Terminologies :
+• Bootstrap Program
+• It loads OS kernel into main memory
+• Each OS has Its own Bootstrap program.
+• Located in first sector of bootable storage device.
+• Bootable Device
+• Storage device whose first sector (512 bytes) contains a special program “Bootstap Program “.
+• Usually it is device that stores OS installation setup;
+• E.g. Bootable CD/DVD ,Bootable Pendrive.
+• Bootloader
+• When multiple OS are installed on single computer, at the beginning one program asks end user about which OS boot.
+• This  task perform by bootloader program.
+• Bootloader program bootstrap program of selected OS.
+• Located in second sector of bootable storage device.
+
+--- Page 37 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+• BIOS/ Firmwaer
+• Firmware is a program/set of a program loaded into base ROM of motherboard.
+• It is developed by Manufacturer of motherboard.
+• The firmware developed for PC (by IBM) is named as BIOS : Basic Input Output  System
+• BIOS Contain
+• POST/BIST
+• Bootstrap loader
+• Information utility
+• Bootable Device preference/settings
+• Basic/Minimal device driver.
+
+--- Page 38 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+• Bootstrap Loader :
+• Finds the bootable device in the computer and start it’s Bootloader.
+• It check all devices in a order given in BIOS and start the first found bootable 
+device.
+• Located in Base ROM (Part of Firmware).
+• POST/BIST
+• POST  - Power ON Self Test
+• BIST   - Built In Self Test
+• Send signal to all peripheral(e.g. keyboard  , mouse, monitor…)and test if they are 
+functioning well.
+• Located in Base ROM(Part of Firmware)
+
+--- Page 39 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+
+--- Page 40 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Thank you!
+Kiran Jaybhave 
+email – kiran.jaybhave@sunbeaminfo.com

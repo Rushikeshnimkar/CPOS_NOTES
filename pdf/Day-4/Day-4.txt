@@ -1,0 +1,488 @@
+
+--- Page 1 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+Memory Management
+
+--- Page 2 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+Memory holds (digital) data or information. 
+-Bit = Binary Digit (0 or 1) => Internally it is an electronic circuit i.e. FlipFlop
+-1 Byte = 8 Bits 
+-B, KB (2^10), MB (2^20), GB (2^30), TB (2^40), PB (2^50), XB (2^60), ZB (2^70)
+Memory Technologies
+There are four methods by which data can be accessed from the computer memory: 
+1.
+Sequential Access: e.g. Magnetic Tape 
+2.
+Direct Access: e.g. Magnetic Disk
+3.
+Random Access: e.g. RAM Memory 
+4.
+Associative Access: e.g. Cache Memory 
+
+--- Page 3 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+Computer Memory Technologies
+As we go Top to Bottom
+1.Acses speed decrease
+2.Coast also decrease
+3.Capacity increase
+
+--- Page 4 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Memory Access 
+• CPU <----> Memory 
+• Bus
+• set of wire to use connection / data transfer.
+• Address bus 
+• Unidirectional from CPU to the memory 
+• Address represent location of the memory to read/write 
+• Number of lines = number of locations 
+• Data bus 
+• Bi-directional from/to CPU to/from the memory 
+• Carries the data
+• Number of lines = width of data unit 
+• Control bus 
+• Read/Write operation 
+• CPU <---> Cache <---> RAM <---> Disk
+
+--- Page 5 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+
+--- Page 6 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+Computer memory can be categorized into two categories as per  its location:
+Internal Memory & External Memory. 
+Internal Memory: memory which is internal to the motherboard is referred as an 
+internal memory. 
+• e.g. CPU registers, L1 & L2 cache Cache memory, RAM.
+External Memory: memory which is external to the motherboard is referred as an 
+external memory.
+• e.g. Magnetic disk, Optical disk, magnetic tape , Pen Drive etc...
+Volatile vs Non-volatile memory 
+- Volatile memory: The contents of memory are lost when power is OFF. 
+- Non-volatile memory: The contents of memory are retained even after power is OFF.
+
+--- Page 7 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+Computer memory can also categorized into two categories: Primary Memory 
+& Secondary  Memory.
+1. Primary Memory: memory which can be accessible directly by the CPU is referred as 
+primary memory, i.e. memory which can accessible by the CPU with the help of instruction 
+set having with the CPU. 
+• e.g. CPU registers, L1 & L2 Cache, Cache Memory, RAM
+2. Secondary Memory: memory which cannot be accessed directly by the CPU is referred as 
+secondary memory.
+• e.g. Magnetic Disk, CD/DVD, PD etc.. 
+• If the CPU want to access disk contents, first it gets fetched into the RAM and then it can be     accessed by the 
+CPU from RAM.
+o As for an execution of every program RAM memory is must and hence RAM is also called as 
+Main memory.
+
+--- Page 8 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Memory Technologies: 
+oCPU Registers: 
+o memory which is very close to the CPU are registers which is at the top in a computer memory 
+hierarchy.
+o Instructions and data currently executing by the CPU can be kept temporarily into the CPU 
+registers.
+Why there is a need of cache memory? 
+o As the rate at which the CPU can execute instructions is faster than the rate at which data can be 
+accessed from the main memory, so even the CPU is very fast, with the same speed data do not gets 
+fetched from the main memory for execution, hence due to this speed mismatch overall system 
+performance gets down. 
+o To reduce speed match between the CPU and the main memory Cache memory (hardware) can be 
+added between them and system performance can be increases by means reducing speed 
+mismatch.
+
+--- Page 9 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+What is Cache Memory ?
+o Cache memory is faster memory, which is a type RAM i.e. SRAM, in which most recently 
+accessed main memory contents can be kept/stored in an associative manner i.e. in a key-
+value pairs. 
+oThere are two types of RAM: 
+1. DRAM (Dynamic RAM): memory cells are made up of capacitors and transistor.
+- Main memory is as example of DRAM. 
+2. SRAM (Static RAM): memory cells are made up of transistor.
+- Cache Memory is an example of SRAM
+
+--- Page 10 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+oCache Memory has C no. of lines, whereas each line is divided into two parts, each line 
+contains k words of data (recently accessed main memory contents ) and its main memory 
+addresses can be kept in few tag bits. 
+1. First part of a line : few tag bits contains main memory addresses of k words of data in 
+that line 
+2. Second part : of a line contains k words of data. 
+oWhen the CPU want to fetch data from the main memory it requests for its address, and this 
+requested address gets searched into the cache memory first, if requested addr is found in the 
+cache memory then data also found in a cache memory, it is referred as cache hit, whereas if 
+the requested address and hence data is not found in a cache memory then it is referred as a 
+cache miss, in that data gets fetched from main memory and gets transferred to the CPU via 
+cache memory only. 
+
+--- Page 11 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+oEven after adding cache memory between the CPU and main memory, the rate at which the 
+CPU can execute instructions is faster than the rate at which at which data can be accessed 
+from cache memory, and hence to reduce speed mismatch between the CPU and cache 
+memory one or more levels of cache memory i.e. L1 cache & L2 cache can be added between 
+them. 
+oDisk Cache: it is purely a software technique in which portion of the main memory can be 
+used as a cache memory in which most recently accessed disk contents can be kept in an 
+associative manner, so whenever the CPU want to access data from hard disk drive it first gets 
+searched into the disk cache. 
+oDisk cache technique is used to reduce speed mismatch between the CPU and Secondary 
+memory
+
+--- Page 12 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals
+ROM (Read Only Memory)
+• Read-only memory (Not writable).
+• This type of memory is non-volatile.
+• The information is stored permanently.
+• Programs (executable instructions) stored in ROM are called -- Firmware. e.g. BIOS, Bootstrap loader, POST, ... 
+• Types of ROM
+• Masked ROM (MROM) -- contents are fixed while manufacturing
+• Programmable ROM (PROM) -- one time writable
+• Erasable Programmable ROM (EPROM) -- written multiple times with special circuit
+• Ultra-Violet EPROM (UV-EPROM) -- all contents erased using UV rays
+• Electrical EPROM (E-EPROM) -- erase selected bytes using high electric current
+• Flash (like E-EPROM) -- erase selected blocks - high speed
+
+--- Page 13 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Virtual memory / Swap area
+Swap area: it is a portion of the hard disk drive ( keep reserved while installation of an OS) 
+can be used by an OS as an extension of the main memory in which inactive running 
+programs can be kept temporarily and as per request processes can be swapped in and 
+swapped out between swap area and the main memory by system program named as memory 
+manager.
+o In Linux swap area can be maintained in the form of swap partition, whereas in Windows swap 
+area can be maintained in the form of swap files. 
+oConventionally size of the swap area should be doubles the size of the main 
+memory, i.e. if the size of main memory is 2 GB then size of swap area should be 4 GB, if the 
+size of main memory is 4 GB then size of swap area should be 8 GB and so on. 
+oVirtual memory advantages:
+o Can execute more number of programs. 
+o Can execute bigger sized programs.
+
+--- Page 14 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+
+--- Page 15 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Swapping:
+oSwapping done by the system program of an OS named as Memory Manager, 
+it swap ins active running programs into the main memory from swap area and 
+swap outs inactive running programs from the main memory and keep them 
+temporarily into the swap area. 
+oThere are two variants of swapping: swap in & swap out.
+
+--- Page 16 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Memory Management
+. Why there is a need of memory (main memory )management ? 
+oAs main memory is must for an execution of any program and it is a limited memory, hence 
+an OS manages main memory. 
+oTo achieve maximum CPU utilization, an OS must support multitasking, and to support 
+multi-tasking multiple processes must be submitted into the system at a time i.e. it must 
+support multiprogramming, but as main memory is limited to support multiprogramming an 
+OS has to do memory management to complete an execution of all submitted processes.
+o Memory space of one process should gets protected from another process. 
+
+--- Page 17 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+oAddresses generated by compiler (i.e. compiler + linker) are referred as 
+logical addresses.
+o Addresses which can be see by the process when it is in the main memory 
+referred as physical addresses.
+o MMU (Memory Management Unit): which is a hardware unit converts logical 
+address into physical address. 
+oMMU is a hardware contains adder circuit, comparator circuit, base register and 
+limit register. Values of base register and limit registers gets change during 
+context-switch, and memory space of one process gets protected from another 
+process. 
+oCPU always executes program in its logical memory space.
+
+--- Page 18 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Memory Allocation: 
+oWhen a process is requesting for the main memory, there are two methods by 
+which memory gets allocated for any process. 
+1.
+Contiguous Memory Allocation 
+i.
+Fixed Size Partitioning 
+ii.
+Variable Size Partitioning
+2.
+Non - contiguous Memory Allocation
+i.
+Segmentation
+ii.
+Paging
+
+--- Page 19 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+1. Contiguous Memory Allocation:
+oUnder this method, process can complete its execution only if memory gets 
+allocated for it in a contiguous manner. 
+oThere are two methods by which memory gets allocated for process under 
+contiguous memory allocation method. 
+1. Fixed Size Partitioning 
+2. Variable Size Partitioning
+
+--- Page 20 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+1. Fixed Size Partitioning: 
+oIn this method, physical memory i.e. main memory (user space) is divided into fixed number 
+of partitions and size of each partition is remains fixed.
+o If any process is requesting for the memory it can be loaded into main memory in any free 
+partition in which it can be fit.
+Advantages: 
+oThis method is simple to implement.
+
+--- Page 21 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Disadvantages: 
+oInternal fragmentation: if memory remains unused which is internal to the partition.
+oDegree of multi-programming is limited to the number of partitions in the main memory. 
+oMaximum size of a process is limited to max size partition in the main memory.
+o To overcome limitations/disadvantages of fixed size partitioning method, variable/dynamic 
+size partitioning method has been designed.
+
+--- Page 22 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+2. Variable/Dynamic Size Partitioning: 
+• In this method, initially whole user space i.e. physical memory is considered as a single free 
+partition, and processes gets loaded into the main memory as they request for it. 
+• Size of partition and number of partitions are not fixed in advanced, it gets decided dynamically.
+• After allocation and de-allocation of few processes, RAM will have few used slots and few free 
+slots. 
+• OS keep track of free slots in form of a table. For any new process, OS use one of the following 
+mechanism to allocate the free slot. 
+• First Fit: Allocate first free slot which can accommodate the process. 
+• Best Fit: Allocate that free slot to the process in which minimum free space will remain. 
+• Worst Fit: Allocate that free slot to the process in which maximum free space will remain. 
+• Statistically it is proven that First fit is faster algorithm , while best fit provides better 
+memory utilization.
+
+--- Page 23 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Advantages: 
+• There are very less chances of internal fragmentation 
+• Degree of multi-programming is not limited/fixed 
+• Size of the process is not also limited, any size process may get load into the main memory. 
+Disadvantages: 
+• External fragmentation: due to loading and removing of processes into and from the main 
+memory, main memory is fragmented 
+- i.e. gets divided into used partitions and free partitions.
+• In such case, if any new process is requesting for the memory and even if the requested size of 
+memory is available, but due to unavailability of the memory in a contiguous manner request of that 
+process cannot be accepted, this problem is referred as an external fragmentation.
+• External fragmentation is the biggest problem under contiguous memory allocation, and hence the 
+solutions on this problem: 
+1. Compaction 
+
+--- Page 24 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Compaction: 
+oshuffling of main memory can be done in such a way that all used partitions 
+can be shifted to one side and all free partitions can be shifted to other side 
+and contiguous large free partition will be made available for the new 
+processes. 
+oCompaction is practically not feasible as there is need to do recalculations 
+of addresses every time. 
+
+--- Page 25 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+2. Non- contiguous Memory Allocation:
+oUnder this method, process can complete its execution even if memory gets 
+allocated for it in a non - contiguous manner, and it can be achieved by two 
+memory management techniques: 
+1. Segmentation 
+2. Paging 
+oSo by using segmentation & paging techniques, process can complete its 
+execution even after memory gets   allocated for it in a non- contiguous 
+manner. 
+
+--- Page 26 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+1. Segmentation
+o In this technique, process in its logical memory is divided into small size 
+segments like stack segment, heap segment, data segment, bss segment , 
+rodata segment, code segment etc..., and when process is requesting for 
+memory it is not requesting memory contiguously for whole process, memory 
+gets allocated contiguously only for small size segments, and segments of one 
+process may get load into the memory randomly at any locations, 
+oi.e. for a process memory gets allocated in a non - contiguous manner, and 
+then only an execution of a process can be completed.
+
+--- Page 27 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Computer Fundamentals and Operating Systems
+oAs segments of a one process gets loaded randomly into the main memory, and 
+in a system thousands processes are running at a time, hence to keep track on all 
+the segments of each process, an OS maintains one table per process referred as 
+a segmentation table in which information about all the segments of that 
+process can be kept.
+o Using segmentation an external fragmentation can be reduced but cannot be 
+completely avoided => to overcome this limitation paging technique has 
+been designed.
+
+--- Page 28 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+
+--- Page 29 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+2. Paging : 
+o In this technique, physical memory (i.e. user space of a main memory) is divided into fixed size of 
+blocks referred as frames, and process’s logical memory space is divided into same size of blocks 
+referred as pages, whereas maximum size of page must be equal to size of frame, i.e.
+o if e.g. size of frame = 4K, then maximum size of each page must be 4K, size of page may be less 
+than 4K. 
+o As process is divided into pages, so when it is requesting for memory, pages of one process may gets 
+loaded into the main memory at any free frames, and for a process memory gets allocated in a non -
+contiguous manner.
+o As pages of a one process gets loaded randomly into the main memory, and in a system thousands 
+processes are running at a time, so to keep track on all the pages of each process, an OS maintains one 
+table per process referred as a page table in which information about all the pages of that process can be 
+kept. 
+o There is no external fragmentation in paging. 
+o Internal fragmentation may exists in paging when the size of page is less than size of frame.
+
+--- Page 30 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+
+--- Page 31 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Virtual Memory Management:
+o As we seen an OS does memory management for completing an execution of multiple submitted processes 
+at once. 
+o An OS also able to complete an execution of such a process having size bigger than size of main memory 
+itself, and to achieve this an OS manages swap area memory as well with main memory and hence it is 
+referred as virtual memory management. 
+o As an OS manages such a memory which is physically not a main memory and hence it is referred as 
+virtual memory management. 
+o Virtual memory management can be implemented by using Paging + Swapping. 
+o In this technique for a process to complete its execution it is not mandatory it must exists wholly in a main 
+memory, even its part is their into the main memory then execution of such process can be completed part 
+by part. 
+o Big size process is divided into pages and when a process is requesting for memory few pages gets loaded 
+into the main memory and few pages can be kept into the swap area, and as per the request pages of that 
+process can swapped in and swapped out between main memory and swap area. 
+
+--- Page 32 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+o Demand Paging: any page of a process gets loaded into the main memory only after 
+requesting by that process i.e. on demand and hence referred as demand paging.
+o The page which is never requested never gets loaded into the main memory and hence it also 
+called as pure demand paging. 
+o If a process is requesting for any page and if that page is not exists in the main memory, then it 
+is referred as page fault.
+oAs the size of process may be bigger than size of main memory itself, and in a system multiple 
+processes are running at a time, hence no. of pages are more than no. of frames, so there are 
+quite good chances that all frames becomes full, and in this case if any process is requesting for 
+a page which does not exists in the main memory at that time there is need to remove any one 
+page from the main memory so that into that free frame requested page will get loaded. 
+o So there is need to decide which page should get removed and requested page gets replaced in 
+that frame, to do this there are certain algorithms referred as page replacement algorithms.
+
+--- Page 33 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+Page Replacement Algorithms: 
+1. FIFO Page Replacement: page which was inserted first gets replaced by the 
+requested page. 
+2. Optimal Page Replacement: page which will not get used in a near future gets 
+replaced by the requested page 
+3. LRU(Least Recently Used) Page Replacement: least recently used page gets 
+replaced by the requested page. 
+4. LFU(Least Frequently Used) Page Replacement: least frequently used page gets 
+replaced by the requested page. 
+5. MFU(Most Frequently Used) Page Replacement: most frequently used page gets 
+replaced by the requested page.
+
+--- Page 34 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Operating Systems Concepts
+• Algorithms 1, 2 & 3 uses stack based approach, whereas algorithms 4 & 5 uses counting 
+based approach. 
+• Conceptually Optimal Page Replacement is the most efficient page replacement algorithm, as 
+no. of page faults in this algorithm are very less, but as its practical implementation is not 
+feasible hence LRU is the most efficient algorithm (implementation wise)
+Thrashing: 
+oIf any process spends more time on paging rather than execution, then this high paging 
+activity is referred as thrashing.
+oSolution: Increase RAM size.
+
+--- Page 35 ---
+Sunbeam Infotech
+www.sunbeaminfo.com
+Thank you!
+Kiran Jaybhave 
+email – kiran.jaybhave@sunbeaminfo.com
