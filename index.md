@@ -64,6 +64,21 @@ Welcome to comprehensive study notes covering **Operating Systems Concepts** and
 
 ---
 
+## 📝 Practice Tests
+
+| Test | Questions | Topics |
+|------|-----------|--------|
+| [**OS MCQ Test (100 Qs)**](os-mcq-100.md) | 100 | OS Basics, Linux, Shell, Processes, Memory, Virtual Memory, Deadlock, Files ⭐ |
+| [**SDM MCQ Test (100 Qs)**](sdm-mcq-100.md) | 100 | Git, SE, SDLC, OOAD, UML, Agile, DevOps, Docker, K8s, Testing ⭐ |
+
+> **Test Features:**
+> - **200 Total MCQs** (100 OS + 100 SDM)
+> - Answers displayed immediately below each question
+> - Difficulty: Easy → Medium → Hard (progressive)
+> - Recommended time: 90 minutes per test
+
+---
+
 ## 📖 How to Use These Notes
 
 1. **Sequential Learning**: Topics are arranged in logical order; start from the beginning for comprehensive understanding
