@@ -443,85 +443,380 @@ CMD ["npm", "start"]
 
 ## Docker Commands
 
+### Understanding Docker Command Structure
+
+```
+docker <command> [options] <arguments>
+       │          │         │
+       │          │         └── What to act on (image name, container ID, etc.)
+       │          └── Flags/options that modify behavior (-t, -d, -it, etc.)
+       └── The action to perform (run, build, pull, etc.)
+```
+
+---
+
 ### Image Commands
+
+#### `docker build` - Build Image from Dockerfile
+
 ```bash
-# Build image from Dockerfile
+docker build -t myapp:v1 .
+```
+
+| Flag | Full Form | Description | Example |
+|------|-----------|-------------|---------|
+| `-t` | `--tag` | **Tag the image** with a name and optional version | `-t myapp:v1` |
+| `-f` | `--file` | Specify Dockerfile path (if not named "Dockerfile") | `-f Dockerfile.prod` |
+| `--no-cache` | | Build without using cached layers | `--no-cache` |
+| `--build-arg` | | Pass build-time variables | `--build-arg VERSION=1.0` |
+| `.` | | **Build context** - the directory containing Dockerfile | `.` (current dir) |
+
+**Examples:**
+```bash
+# Build with tag
 docker build -t myapp:v1 .
 
-# List images
+# Build with custom Dockerfile
+docker build -f Dockerfile.dev -t myapp:dev .
+
+# Build without cache
+docker build --no-cache -t myapp:v1 .
+
+# Build with build arguments
+docker build --build-arg NODE_ENV=production -t myapp:prod .
+```
+
+---
+
+#### `docker images` / `docker image ls` - List Images
+
+```bash
 docker images
 docker image ls
+```
 
-# Pull image from registry
+| Flag | Description | Example |
+|------|-------------|---------|
+| `-a` | Show all images (including intermediate) | `docker images -a` |
+| `-q` | Show only image IDs | `docker images -q` |
+| `--filter` | Filter images | `docker images --filter "dangling=true"` |
+
+---
+
+#### `docker pull` - Download Image from Registry
+
+```bash
 docker pull nginx:latest
+docker pull ubuntu:22.04
+```
 
-# Push image to registry
+| Component | Description |
+|-----------|-------------|
+| `nginx` | Image name |
+| `:latest` | Tag/version (defaults to `latest` if omitted) |
+| `username/image` | User's image from Docker Hub |
+
+---
+
+#### `docker push` - Upload Image to Registry
+
+```bash
 docker push username/myapp:v1
+```
 
-# Remove image
+> **Note:** You must be logged in (`docker login`) and the image must be tagged with your username.
+
+---
+
+#### `docker rmi` - Remove Image
+
+> **`rmi`** = **R**e**M**ove **I**mage
+
+```bash
 docker rmi myapp:v1
-docker image rm myapp:v1
+docker image rm myapp:v1    # Same command, newer syntax
+```
 
-# Tag image
+| Flag | Description | Example |
+|------|-------------|---------|
+| `-f` | **Force** remove (even if container is using it) | `docker rmi -f myapp:v1` |
+
+**Examples:**
+```bash
+# Remove single image
+docker rmi nginx:latest
+
+# Remove multiple images
+docker rmi nginx:latest ubuntu:22.04
+
+# Force remove
+docker rmi -f myapp:v1
+
+# Remove all unused images
+docker image prune
+
+# Remove ALL images (dangerous!)
+docker rmi $(docker images -q)
+```
+
+---
+
+#### `docker tag` - Tag an Image
+
+```bash
 docker tag myapp:v1 myapp:latest
+docker tag myapp:v1 username/myapp:v1    # For pushing to Docker Hub
+```
 
-# Inspect image
-docker image inspect myapp:v1
+---
 
-# Image history (show layers)
+#### `docker history` - Show Image Layers
+
+```bash
 docker history myapp:v1
 ```
 
+Shows each layer of the image with commands that created them.
+
+---
+
 ### Container Commands
+
+#### `docker run` - Create and Start Container
+
+> This is the **most important** Docker command!
+
 ```bash
-# Create and start container
-docker run -d -p 3000:3000 --name myapp myapp:v1
-
-# Run options explained:
-# -d         = detached (background)
-# -p 3000:3000 = port mapping (host:container)
-# --name     = container name
-# -e VAR=val = environment variable
-# -v /host:/container = volume mount
-# --rm       = remove after exit
-
-# List containers
-docker ps            # running only
-docker ps -a         # all containers
-
-# Stop container
-docker stop myapp
-
-# Start stopped container
-docker start myapp
-
-# Restart container
-docker restart myapp
-
-# Remove container
-docker rm myapp
-docker rm -f myapp   # force remove running
-
-# View logs
-docker logs myapp
-docker logs -f myapp  # follow logs
-
-# Execute command in running container
-docker exec -it myapp /bin/sh
-docker exec -it myapp bash
-
-# Copy files
-docker cp myapp:/app/file.txt ./
-docker cp ./file.txt myapp:/app/
-
-# Inspect container
-docker inspect myapp
-
-# Resource usage
-docker stats
+docker run [OPTIONS] IMAGE [COMMAND]
 ```
 
+##### Common Flags for `docker run`
+
+| Flag | Full Form | Description | Example |
+|------|-----------|-------------|---------|
+| `-d` | `--detach` | Run in **background** (detached mode) | `-d` |
+| `-it` | `-i -t` | **Interactive terminal** (combines -i and -t) | `-it` |
+| `-i` | `--interactive` | Keep STDIN open (for input) | `-i` |
+| `-t` | `--tty` | Allocate a **pseudo-TTY** (terminal) | `-t` |
+| `-p` | `--publish` | **Port mapping** (host:container) | `-p 8080:80` |
+| `-P` | `--publish-all` | Publish all exposed ports to random ports | `-P` |
+| `--name` | | Assign a **name** to the container | `--name myapp` |
+| `-e` | `--env` | Set **environment variable** | `-e NODE_ENV=prod` |
+| `-v` | `--volume` | Mount a **volume** (host:container) | `-v /data:/app/data` |
+| `--rm` | | **Auto-remove** container when it exits | `--rm` |
+| `-w` | `--workdir` | Set **working directory** inside container | `-w /app` |
+| `--network` | | Connect to a specific network | `--network mynet` |
+| `--restart` | | Restart policy (no, always, on-failure) | `--restart always` |
+| `-m` | `--memory` | **Memory limit** | `-m 512m` |
+| `--cpus` | | **CPU limit** | `--cpus 0.5` |
+
+##### Understanding `-it` (Interactive Terminal)
+
+> **`-it`** is a combination of **`-i`** (interactive) and **`-t`** (tty/terminal)
+
+| Flag | What it does |
+|------|--------------|
+| `-i` | Keeps STDIN (standard input) open - you can type commands |
+| `-t` | Allocates a pseudo-TTY - gives you a terminal interface |
+| `-it` | Together they let you interact with the container like a terminal |
+
+**When to use `-it`:**
+```bash
+# Open a shell inside a container (need -it for interaction)
+docker run -it ubuntu bash
+
+# Access running container's shell
+docker exec -it mycontainer /bin/sh
+
+# Run Python interactively
+docker run -it python:3.9
+```
+
+**When to use `-d` (detached):**
+```bash
+# Run web server in background
+docker run -d -p 80:80 nginx
+
+# Run database in background
+docker run -d --name postgres -e POSTGRES_PASSWORD=secret postgres
+```
+
+##### Port Mapping `-p` Explained
+
+```
+-p HOST_PORT:CONTAINER_PORT
+   │           │
+   │           └── Port inside the container
+   └── Port on your machine (host)
+```
+
+**Examples:**
+```bash
+# Access container's port 80 via localhost:8080
+docker run -p 8080:80 nginx
+
+# Map multiple ports
+docker run -p 3000:3000 -p 3001:3001 myapp
+
+# Map to specific host IP
+docker run -p 127.0.0.1:8080:80 nginx
+
+# Random host port
+docker run -p 80 nginx    # Docker assigns random host port
+```
+
+##### Volume Mounting `-v` Explained
+
+```
+-v HOST_PATH:CONTAINER_PATH[:OPTIONS]
+   │           │              │
+   │           │              └── Optional: ro (read-only), rw (read-write)
+   │           └── Path inside container
+   └── Path on your machine
+```
+
+**Examples:**
+```bash
+# Mount current directory
+docker run -v $(pwd):/app myapp
+
+# Mount named volume
+docker run -v mydata:/app/data myapp
+
+# Read-only mount
+docker run -v /config:/app/config:ro myapp
+
+# Mount specific file
+docker run -v /path/to/file.txt:/app/config.txt myapp
+```
+
+---
+
+#### `docker ps` - List Containers
+
+```bash
+docker ps              # Running containers only
+docker ps -a           # ALL containers (including stopped)
+```
+
+| Flag | Description | Example |
+|------|-------------|---------|
+| `-a` | Show **all** containers (running + stopped) | `docker ps -a` |
+| `-q` | Show only container **IDs** | `docker ps -q` |
+| `-l` | Show **latest** created container | `docker ps -l` |
+| `--filter` | Filter output | `docker ps --filter "status=exited"` |
+
+---
+
+#### `docker exec` - Execute Command in Running Container
+
+```bash
+docker exec [OPTIONS] CONTAINER COMMAND
+```
+
+| Flag | Description | Example |
+|------|-------------|---------|
+| `-it` | Interactive terminal (see above) | `docker exec -it myapp bash` |
+| `-d` | Detached (run in background) | `docker exec -d myapp touch /tmp/file` |
+| `-u` | Run as specific **user** | `docker exec -u root myapp bash` |
+| `-w` | Set **working directory** | `docker exec -w /app myapp ls` |
+| `-e` | Set **environment variable** | `docker exec -e DEBUG=1 myapp ./script.sh` |
+
+**Common Uses:**
+```bash
+# Open bash shell in container
+docker exec -it mycontainer bash
+
+# Open sh shell (if bash not available)
+docker exec -it mycontainer /bin/sh
+
+# Run command as root
+docker exec -u root -it mycontainer bash
+
+# Run single command
+docker exec mycontainer cat /etc/hosts
+
+# Check running processes
+docker exec mycontainer ps aux
+```
+
+---
+
+#### `docker stop` / `docker start` / `docker restart`
+
+```bash
+docker stop myapp      # Gracefully stop (sends SIGTERM, then SIGKILL)
+docker start myapp     # Start stopped container
+docker restart myapp   # Stop then start
+docker kill myapp      # Force stop immediately (SIGKILL)
+```
+
+| Command | Signal Sent | Use Case |
+|---------|-------------|----------|
+| `stop` | SIGTERM → SIGKILL | Graceful shutdown |
+| `kill` | SIGKILL | Force stop immediately |
+| `restart` | stop + start | Quick restart |
+
+---
+
+#### `docker rm` - Remove Container
+
+```bash
+docker rm myapp
+docker rm container_id
+```
+
+| Flag | Description | Example |
+|------|-------------|---------|
+| `-f` | **Force** remove running container | `docker rm -f myapp` |
+| `-v` | Remove associated **volumes** too | `docker rm -v myapp` |
+
+**Examples:**
+```bash
+# Remove stopped container
+docker rm myapp
+
+# Force remove running container
+docker rm -f myapp
+
+# Remove all stopped containers
+docker container prune
+
+# Remove all containers (dangerous!)
+docker rm -f $(docker ps -aq)
+```
+
+---
+
+#### `docker logs` - View Container Logs
+
+```bash
+docker logs myapp
+```
+
+| Flag | Description | Example |
+|------|-------------|---------|
+| `-f` | **Follow** logs in real-time | `docker logs -f myapp` |
+| `--tail` | Show last N lines | `docker logs --tail 100 myapp` |
+| `-t` | Show **timestamps** | `docker logs -t myapp` |
+| `--since` | Show logs since timestamp | `docker logs --since 1h myapp` |
+
+---
+
+#### `docker cp` - Copy Files Between Host and Container
+
+```bash
+# Container to Host
+docker cp mycontainer:/app/file.txt ./local/
+
+# Host to Container
+docker cp ./local/file.txt mycontainer:/app/
+```
+
+---
+
 ### Cleanup Commands
+
 ```bash
 # Remove all stopped containers
 docker container prune
@@ -529,12 +824,44 @@ docker container prune
 # Remove unused images
 docker image prune
 
+# Remove dangling images (untagged)
+docker image prune -a
+
 # Remove unused volumes
 docker volume prune
 
-# Remove everything unused
+# Remove unused networks
+docker network prune
+
+# Remove EVERYTHING unused (containers, images, networks, volumes)
 docker system prune -a
 ```
+
+| Command | What it removes |
+|---------|-----------------|
+| `container prune` | Stopped containers |
+| `image prune` | Dangling images |
+| `image prune -a` | All unused images |
+| `volume prune` | Unused volumes |
+| `system prune` | All unused objects |
+| `system prune -a` | All unused + all images |
+
+---
+
+### Quick Reference: Most Used Commands
+
+| Task | Command |
+|------|---------|
+| Build image | `docker build -t name:tag .` |
+| Run container | `docker run -d -p 8080:80 --name myapp image` |
+| Run interactively | `docker run -it image bash` |
+| List containers | `docker ps -a` |
+| Stop container | `docker stop container_name` |
+| Remove container | `docker rm container_name` |
+| Remove image | `docker rmi image_name` |
+| View logs | `docker logs -f container_name` |
+| Enter container | `docker exec -it container_name bash` |
+| Clean up | `docker system prune -a` |
 
 ---
 
